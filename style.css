@@ -9,6 +9,101 @@ body {
   background-color: #EACAA6;
 }
 
+.hideBackground {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000007c;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  position: fixed;
+}
+
+.gameExplanation {
+  background-color: whitesmoke;
+  display: grid;
+  place-items: center;
+  height: 400px;
+  width: 600px;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 10px 10px black;
+  animation-name: gameExplanation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes gameExplanation {
+  from {
+    transform: scale(.75);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#x {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+}
+
+#x:hover {
+  color: #404040;
+}
+
+#gameInfo {
+  position: absolute;
+  top: 20px;
+  border-bottom: 5px solid black;
+  border-radius: 25%;
+}
+
+#gameSteps {
+  font-size: 1.25rem;
+  max-width: 400px;
+  line-height: 2rem;
+}
+
+.prevNext {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+  display: none;
+}
+
+#previous,
+#next,
+#nextDummy {
+  padding: 10px 17px;
+  border: none;
+  appearance: none;
+  border-radius: 2px;
+  color: #ffffff;
+}
+
+#previous {
+  background-color: rgb(144, 211, 144);
+}
+
+#next,
+#nextDummy {
+  background-color: rgb(218, 188, 142);
+}
+
+#previous:active,
+#next:active,
+#nextDummy:active {
+  transform: scale(.99);
+}
+
 .backgroundImage {
   width: 100%;
   position: absolute;
@@ -18,8 +113,10 @@ body {
 .newGameIcon {
   font-size: 2.25rem;
   color: #333;
-  margin: 10px;
+  padding: 10px;
   display: none;
+  background-color: rgb(255, 236, 215);
+  border-radius: 15px;
 }
 
 #newGame {
@@ -114,7 +211,8 @@ body {
   justify-content: center;
 }
 
-#diceImage {
+#diceImage,
+.diceImage {
   display: none;
   width: 65px;
   border-radius: 7px;
@@ -195,6 +293,10 @@ p {
 }
 
 @media screen and (max-width: 1200px) {
+  .gameExplanation {
+    height: 300px;
+    width: 500px;
+  }
   .gameInfo {
     margin: 75px 0 20px;
   }
@@ -214,11 +316,18 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+  .gameExplanation {
+    height: 400px;
+    width: 300px;
+  }
+  #gameSteps {
+    font-size: 1.1rem;
+  }
   .gameInfo {
     margin: 20px 0;
   }
   .newGameIcon {
-    display: block;
+    display: inline-block;
   }
   #newGame {
     display: none;

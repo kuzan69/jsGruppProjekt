@@ -21,12 +21,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="hideBackground">
+    <div class="gameExplanation">
+      <i id="x" class="fa-solid fa-xmark"></i>
+      <h1 id="gameInfo">Game info</h1>
+      <p id="gameSteps">
+        If you do not know the rules, click 
+        <span><button id="nextDummy">Next</button></span> 
+        otherwise click X to start playing.
+      </p>
+      <div class="prevNext">
+        <button id="previous">Previous</button>
+        <button id="next">Next</button>
+      </div>
+    </div>
+  </div>
+
   <img class="backgroundImage" src="assets/bordLow.png" alt="Game image">
-
-  <!-- <div class="gameExplanation">
-    <p>Info</p>
-
-  </div> -->
 
   <nav>
     <i class="fa-solid fa-rotate-right newGameIcon newGame"></i>
